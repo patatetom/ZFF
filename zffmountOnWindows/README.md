@@ -76,14 +76,14 @@ sudo mount /dev/sdd1 /mnt/zfftest
 ```
 
 ```bash/WSL
-pv -brt /mnt/zff/zfftest.z01 > /dev/null
+pv -brt /mnt/zfftest/zfftest.z01 > /dev/null
 # 1.62GiB 0:00:05 [ 297MiB/s]
 ```
 
 ```bash/WSL
 mkdir -p /tmp/zfftest
 
-zffmount -i /mnt/zff/zfftest.z01 -m /tmp/zfftest
+zffmount -i /mnt/zfftest/zfftest.z01 -m /tmp/zfftest
 
 pv -brt /tmp/zfftest/object_1/zff_image.dd > /dev/null
 # 8.00GiB 0:00:13 [ 593MiB/s]
@@ -103,8 +103,11 @@ time < nul
 :: 11:16:35
 :: 1 file(s) copied.
 :: 11:17:05
+
+certutil -hashFile \\WSL$\Debian\tmp\zfftest\object_1\zff_image.dd SHA1
+957101f373f6f888becc44a4ea6266b7e6e8aca2
 ```
 
 > [!NOTE]
-> the `NTFS` partition can be used in the same way.
+> the `NTFS` partition can also be used in the same way (`ntfs-3g`).
 > however, the speed seems to be slower.
