@@ -90,7 +90,8 @@ pv -brt /tmp/zfftest/object_1/zff_image.dd > /dev/null
 ```
 
 > [!TIP]
-> the contents of the container are now accessible from Windows in `\\WSL$\Debian\tmp\zfftest\`.
+> the contents of the container are now accessible from Windows in `\\WSL$\Debian\tmp\zfftest\`.<br />
+> you can now use your favorite investigation tools on the raw disk/partition image ;-)
 
 
 ## simple read test from Windows
