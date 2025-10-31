@@ -48,8 +48,8 @@ sudo sh -c "echo user_allow_other > /etc/fuse.conf"
 ## use `zffmount`
 
 > [!NOTE]
-> get direct access to the `ZFF` container :
-> access through Windows (drive letter) is not acceptable given the poor speed.
+> with « direct » access to the `ZFF` container.<br :>
+> access through Windows (mounted drive letter) is not acceptable given the poor speed.
 
 ```powershell
 # in administrator PowerShell console
@@ -96,7 +96,7 @@ pv -brt /tmp/zfftest/object_1/zff_image.dd > /dev/null
 ## simple read test from Windows
 
 ```cmd
-:: copy/paste the next three commands in a user CMD
+:: copy/paste the next three commands in a user Cmd console
 time < nul
 copy \\WSL$\Debian\tmp\zfftest\object_1\zff_image.dd /B nul /B
 time < nul
