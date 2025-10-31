@@ -7,6 +7,11 @@
 > `ewfacquire -c fast -t zfftest /dev/loop0` (2m47s 49Mb/s)
 > commands, respectivly, and saved on a USB3 flash drive.
 
+> [!TIP]
+> based on the tests carried out below, `ZFF` is faster than `EWF`.
+> the `pv` tests, which clearly favor `ZFF`, are tempered by the `tac` tests.<br />
+> `ZFF` also offers (compared to `libewf`) the ability to encrypt and sign the container.
+
 
 ## `RAW`
 
