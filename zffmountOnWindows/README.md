@@ -1,6 +1,7 @@
 # `zffmount` on Windows
 
-> Windows version, `WSL` version,  etc here...
+> [!NOTE]
+> on Windows 11 `10.0.26100.6899`, `WSL` `2.6.1.0` and kernel `6.6.87.2-1`.
 
 
 ## install Debian and cetera on `WSL`
