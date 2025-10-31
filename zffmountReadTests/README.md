@@ -1,6 +1,10 @@
 # `zffmount` read tests
 
-> the containers `zfftest.z01` and `zfftest.e01` were acquired with the orders `zffacquire physical -i /dev/loop0 -o zfftest` (1m10s 115Mb/s) and `ewfacquire -c fast -t zfftest /dev/loop0` (2m47s 49Mb/s) and saved on a USB3 flash drive.
+> the containers `zfftest.z01` and `zfftest.e01` were acquired with the orders
+> `zffacquire physical -i /dev/loop0 -o zfftest` (1m10s 115Mb/s)
+> and
+> `ewfacquire -c fast -t zfftest /dev/loop0` (2m47s 49Mb/s),
+> and saved on a USB3 flash drive.
 
 
 ## `RAW`
@@ -59,7 +63,7 @@ done
 ```
 
 ```bash
-mount /tmp/zfftest/object_1/zff_image.dd /mnt/
+sudo mount /tmp/zfftest/object_1/zff_image.dd /mnt/
 
 du -sh /mnt/
 # 4,1G	/mnt/
@@ -102,7 +106,7 @@ done
 ```
 
 ```bash
-mount /tmp/ewftest/ewf1 /mnt/
+sudo mount /tmp/ewftest/ewf1 /mnt/
 
 du -sh /mnt/
 # 4,1G	/mnt/
