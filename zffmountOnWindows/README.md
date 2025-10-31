@@ -109,5 +109,5 @@ certutil -hashFile \\WSL$\Debian\tmp\zfftest\object_1\zff_image.dd SHA1
 ```
 
 > [!NOTE]
-> the `NTFS` partition can also be used in the same way (`ntfs-3g`).
+> the `NTFS` partition (`/dev/sdd2`) can also be used in the same way (`ntfs-3g`).
 > however, the speed seems to be slower.
