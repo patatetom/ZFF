@@ -9,8 +9,8 @@ the **Z Forensic File** format
 - [EWF](https://github.com/libyal/libewf/)
 
 
-## [`zffmount` read tests](zffmountReadTests/README.md)
+## [`zffmount` read tests](zffmountReadTests)
 
-## [`zffmount` on Windows](zffmountOnWindows/README.md)
+## [`zffmount` on Windows](zffmountOnWindows)
 
-## [`zffimager`](zffimager/README.md)
+## [`zffimager`](zffimager)
