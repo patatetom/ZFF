@@ -47,6 +47,7 @@ sudo sh -c "echo user_allow_other > /etc/fuse.conf"
 
 ## use `zffmount`
 
+> [!NOTE]
 > get direct access to the `ZFF` container :
 > access through Windows (drive letter) is not acceptable given the poor speed.
 
@@ -88,7 +89,8 @@ pv -brt /tmp/zfftest/object_1/zff_image.dd > /dev/null
 # 8.00GiB 0:00:13 [ 593MiB/s]
 ```
 
-> ✅ the contents of the container are now accessible from Windows in `\\WSL$\Debian\tmp\zfftest\`.
+> [!TIP]
+> the contents of the container are now accessible from Windows in `\\WSL$\Debian\tmp\zfftest\`.
 
 
 ## simple read test from Windows
@@ -96,12 +98,13 @@ pv -brt /tmp/zfftest/object_1/zff_image.dd > /dev/null
 ```cmd
 :: copy/paste the following three commands
 time < nul
-copy \\WSL$\Debian\home\zff\zff\object_1\zff_image.dd /B nul /B
+copy \\WSL$\Debian\tmp\zfftest\object_1\zff_image.dd /B nul /B
 time < nul
 :: 11:16:35
 :: 1 file(s) copied.
 :: 11:17:05
 ```
 
+> [!NOTE]
 > the `NTFS` partition can be used in the same way.
 > however, the speed seems to be slower.
