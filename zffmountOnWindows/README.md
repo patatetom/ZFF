@@ -25,6 +25,7 @@ sudo apt update
 sudo apt full-upgrade
 
 sudo apt install gcc pkg-config fuse3 libfuse-dev curl pv ntfs-3g
+sudo sh -c "echo user_allow_other > /etc/fuse.conf"
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
@@ -40,8 +41,6 @@ rustup update
 cargo install zffmount
 
 zffmount --help
-
-sudo sh -c "echo user_allow_other > /etc/fuse.conf"
 ```
 
 
