@@ -1,3 +1,4 @@
-# zffimager
-_simple GTK GUI for zffacquire_
+# `zffimager`
+
+_simple GTK GUI for `zffacquire`_
 
