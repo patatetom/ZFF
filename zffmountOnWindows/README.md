@@ -96,7 +96,7 @@ pv -brt /tmp/zfftest/object_1/zff_image.dd > /dev/null
 ## simple read test from Windows
 
 ```cmd
-:: copy/paste the following three commands
+:: copy/paste the next three commands in a user CMD
 time < nul
 copy \\WSL$\Debian\tmp\zfftest\object_1\zff_image.dd /B nul /B
 time < nul
