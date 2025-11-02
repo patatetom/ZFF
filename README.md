@@ -1,6 +1,6 @@
 # ZFF
 
-the **Z Forensic File** format
+**Z Forensic File**
 
 `ZFF` is an alternative to the `AFF` and `EWF` forensic file formats and is not compatible with them.
 
