@@ -45,9 +45,9 @@ done
 ## `ZFF`
 
 ```bash
-mkdir /tmp/zfftest
+mkdir /tmp/zfftest/
 
-zffmount -i /mnt/zfftest.z01 -m /tmp/zfftest
+zffmount -i /mnt/zfftest.z01 -m /tmp/zfftest/
 
 ls -l /tmp/zfftest/object_1/
 # -r-xr-xr-x 1 pascal pascal 8589934592 30 oct.  09:50 zff_image.dd
@@ -88,7 +88,7 @@ flush && time ( find /mnt/ -type f -exec tac '{}' \; | sha1sum )
 ## `EWF`
 
 ```bash
-mkdir /tmp/ewftest
+mkdir /tmp/ewftest/
 
 ewfmount /mnt/zfftest.e01 /tmp/ewftest/
 
