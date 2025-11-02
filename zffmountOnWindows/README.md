@@ -50,30 +50,28 @@ zffmount --help
 
 > [!NOTE]
 > with « direct » access to the `ZFF` container.<br :>
-> access through Windows (mounted drive letter) is not acceptable given the poor speed.
+> the drive must be released from Windows before it can be used « directly » under `WSL`.<br />
+> access through Windows (mounted drive letter in `/mnt/e/`) is not acceptable given the poor speed.
 
 ```powershell
 # in administrator PowerShell console
 Get-CimInstance -Query "SELECT * from Win32_DiskDrive"
 
-# update disk number to your case
 "select disk 1", "offline disk" | diskpart
 
-# update disk number to your case
 wsl --mount \\.\PHYSICALDRIVE1 --bare
 ```
 
 ```bash/WSL
 lsblk -o +fstype
 # NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS FSTYPE
-# …
 # sdd      8:48   0 238.5G  0 disk
 # +-sdd1   8:49   0   128G  0 part             ext4
 # +-sdd2   8:50   0 110.5G  0 part             ntfs
 
-sudo mkdir -p /mnt/zfftest
+sudo mkdir -p /mnt/zfftest/
 
-sudo mount /dev/sdd1 /mnt/zfftest
+sudo mount /dev/sdd1 /mnt/zfftest/
 ```
 
 ```bash/WSL
