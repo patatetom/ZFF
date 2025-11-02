@@ -10,7 +10,7 @@
 > [!TIP]
 > based on the tests carried out below, `ZFF` is faster than `EWF`.
 > the `pv` tests, which clearly favor `ZFF`, are tempered by the `tac` tests.<br />
-> `ZFF` also offers (compared to `libewf`) the ability to encrypt and sign the container.
+> in addition to being faster in acquiring, `ZFF` also offers the ability to encrypt and sign the container.
 
 
 ## `RAW`
