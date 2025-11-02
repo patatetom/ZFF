@@ -1,7 +1,8 @@
 # `zffmount` on Windows
 
 > [!NOTE]
-> on Windows 11 `10.0.26100.6899`, `WSL` `2.6.1.0` and kernel `6.6.87.2-1`.
+> on Windows 11 `10.0.26100.6899`, `WSL` `2.6.1.0` and kernel `6.6.87.2-1`.<br />
+> unlike `zffacquire`, and due to the use of `FUSE`, `zffmount` cannot be ported directly to Windows.
 
 
 ## install Debian and cetera on `WSL`
