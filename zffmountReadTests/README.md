@@ -7,11 +7,6 @@
 > `ewfacquire -c fast -t zfftest /dev/loop0` (2m47s 49Mb/s)
 > commands, respectivly, and saved on a USB3 flash drive.
 
-> [!TIP]
-> based on the tests carried out below, `ZFF` is faster than `EWF`.
-> the `pv` tests, which clearly favor `ZFF`, are tempered by the `tac` tests.<br />
-> in addition to being faster in acquiring, `ZFF` also offers the ability to encrypt and sign the container.
-
 
 ## `RAW`
 
@@ -126,3 +121,8 @@ flush && time ( find /mnt/ -type f -exec tac '{}' \; | sha1sum )
 # user 1m30,660s
 # sys  0m47,059s
 ```
+
+> [!TIP]
+> based on the tests carried out below, `ZFF` is faster than `EWF`.<br />
+> the `pv` tests, which clearly favor `ZFF`, are tempered by the `tac` tests.<br />
+> in addition to being faster in acquiring, `ZFF` also offers the ability to encrypt and sign the container.
