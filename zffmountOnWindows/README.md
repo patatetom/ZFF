@@ -116,3 +116,15 @@ certutil -hashFile \\WSL$\Debian\zff\object_1\zff_image.dd SHA1
 > [!NOTE]
 > the `NTFS` partition (`/dev/sdd2`) can also be used in the same way (`ntfs-3g`).
 > however, the speed seems to be slower.
+
+
+## Explorer integration
+
+if your `ZFF` container is located on a Windows partition (`NTFS`, `exFAT`, `FAT`, `UDF`), opening it directly from Explorer can be automated :
+
+- download and check the PowerShell script [`zffAutoMount.ps1`](https://github.com/patatetom/ZFF/blob/main/zffmountOnWindows/zffAutoMount.ps1)
+- save it to the root of your profile (`%UserProfile%`)
+- download and check the Registry file [`zffAutoMount.reg`](https://github.com/patatetom/ZFF/blob/main/zffmountOnWindows/zffAutoMount.reg)
+- save it and run it to define the `.Z01` file extension.
+
+once this is done, double-clicking on a `ZFF` container should automatically make its contents available in Windows at `\\WSL$\Debian\mnt\wsl\zff\`.
