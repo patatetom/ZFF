@@ -23,6 +23,7 @@ Retype new password:
 ```
 
 ```bash
+# in WSL console
 sudo apt update
 sudo apt full-upgrade
 
@@ -66,6 +67,7 @@ wsl --mount \\.\PHYSICALDRIVE1 --bare
 ```
 
 ```bash
+# in WSL console
 lsblk -o +fstype
 # NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS FSTYPE
 # sdd      8:48   0 238.5G  0 disk
