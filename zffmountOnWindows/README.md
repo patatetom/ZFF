@@ -120,6 +120,11 @@ certutil -hashFile \\WSL$\Debian\zff\object_1\zff_image.dd SHA1
 
 ## Explorer integration
 
+> [!NOTE]
+> only `NTFS` has been tested (`ntfs-3g`).<br />
+> manipulating a disk requires administrative privileges (`UAC`).
+> only removable disks are supported by Windows.
+
 if your `ZFF` container is located on a Windows partition (`NTFS`, `exFAT`, `FAT`, `UDF`), opening it directly from Explorer can be automated :
 
 - download and check the PowerShell script [`zffAutoMount.ps1`](https://github.com/patatetom/ZFF/blob/main/zffmountOnWindows/zffAutoMount.ps1)
