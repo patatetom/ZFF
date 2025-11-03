@@ -27,7 +27,10 @@ sudo apt update
 sudo apt full-upgrade
 
 sudo apt install gcc pkg-config fuse3 libfuse-dev curl pv ntfs-3g
+
 sudo sh -c "echo user_allow_other > /etc/fuse.conf"
+sudo sh -c "echo zff ALL=(ALL) NOPASSWD: /bin/mount > /etc/sudoers.d/zff"
+sudo sh -c "echo zff ALL=(ALL) NOPASSWD: /bin/umount >> /etc/sudoers.d/zff"
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
@@ -62,34 +65,34 @@ Get-CimInstance -Query "SELECT * from Win32_DiskDrive"
 wsl --mount \\.\PHYSICALDRIVE1 --bare
 ```
 
-```bash/WSL
+```bash
 lsblk -o +fstype
 # NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS FSTYPE
 # sdd      8:48   0 238.5G  0 disk
 # +-sdd1   8:49   0   128G  0 part             ext4
 # +-sdd2   8:50   0 110.5G  0 part             ntfs
 
-sudo mkdir -p /mnt/zfftest/
+mkdir -p /tmp/zff/
 
-sudo mount /dev/sdd1 /mnt/zfftest/
+mount /dev/sdd1 /tmp/zff/
 ```
 
-```bash/WSL
-pv -brt /mnt/zfftest/zfftest.z01 > /dev/null
+```bash
+pv -brt /tmp/zff/zfftest.z01 > /dev/null
 # 1.62GiB 0:00:05 [ 297MiB/s]
 ```
 
-```bash/WSL
-mkdir -p /tmp/zfftest
+```bash
+sudo mkdir -p /zff/
 
-zffmount -i /mnt/zfftest/zfftest.z01 -m /tmp/zfftest
+zffmount -i /tmp/zff/zfftest.z01 -m /zff/
 
-pv -brt /tmp/zfftest/object_1/zff_image.dd > /dev/null
+pv -brt /zff/object_1/zff_image.dd > /dev/null
 # 8.00GiB 0:00:13 [ 593MiB/s]
 ```
 
 > [!TIP]
-> the contents of the container are now accessible from Windows in `\\WSL$\Debian\tmp\zfftest\`.<br />
+> the contents of the container are now accessible from Windows in `\\WSL$\Debian\zff\`.<br />
 > you can now use your favorite investigation tools on the raw disk/partition image ;-)
 
 
@@ -98,13 +101,13 @@ pv -brt /tmp/zfftest/object_1/zff_image.dd > /dev/null
 ```cmd
 :: copy/paste the next three commands in a user Cmd console
 time < nul
-copy \\WSL$\Debian\tmp\zfftest\object_1\zff_image.dd /B nul /B
+copy \\WSL$\Debian\zff\object_1\zff_image.dd /B nul /B
 time < nul
 :: 11:16:35
 :: 1 file(s) copied.
 :: 11:17:05
 
-certutil -hashFile \\WSL$\Debian\tmp\zfftest\object_1\zff_image.dd SHA1
+certutil -hashFile \\WSL$\Debian\zff\object_1\zff_image.dd SHA1
 957101f373f6f888becc44a4ea6266b7e6e8aca2
 ```
 
