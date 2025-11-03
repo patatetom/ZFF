@@ -132,4 +132,4 @@ if your `ZFF` container is located on a Windows partition (`NTFS`, `exFAT`, `FAT
 - download and check the Registry file [`zffAutoMount.reg`](https://github.com/patatetom/ZFF/blob/main/zffmountOnWindows/zffAutoMount.reg)
 - save it and run it to define the `.Z01` file extension.
 
-once this is done, double-clicking on a `ZFF` container should automatically make its contents available in Windows at `\\WSL$\Debian\mnt\wsl\zff\` (see [#1](https://github.com/patatetom/ZFF/blob/main/zffmountOnWindows/media/zffAutoMount.1.png) / [#2](https://github.com/patatetom/ZFF/blob/main/zffmountOnWindows/media/zffAutoMount.2.png) / [#3]()).
+once this is done, double-clicking on a `ZFF` container should automatically make its contents available in Windows at `\\WSL$\Debian\mnt\wsl\zff\` (see [#1](https://github.com/patatetom/ZFF/blob/main/zffmountOnWindows/media/zffAutoMount.1.png) [#2](https://github.com/patatetom/ZFF/blob/main/zffmountOnWindows/media/zffAutoMount.2.png) [#3](https://github.com/patatetom/ZFF/blob/main/zffmountOnWindows/media/zffAutoMount.3.png)).
