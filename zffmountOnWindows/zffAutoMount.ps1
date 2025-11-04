@@ -41,7 +41,7 @@ if (-NOT $Disk) {0/0}
 WSL --mount \\.\PHYSICALDRIVE$Disk --bare | Out-Null
 # run zffmount
 WSL mkdir -p /tmp/zff/ /mnt/wsl/zff/ | Out-Null
-WSL sudo mount /dev/sde$Partition /tmp/zff/ | Out-Null
+WSL sudo mount "/dev/`$(lsblk -ndoKNAME | tail -1)$Partition" /tmp/zff/ | Out-Null
 Write-Host `n`n`n' Container is accessible at \\WSL$\Debian\mnt\wsl\zff\' -ForegroundColor DarkGreen
 Write-Host ' Press [Ctrl]-[C] to stop sharing...'`n`n`n -ForegroundColor DarkGray
 WSL ~/.cargo/bin/zffmount -i "/tmp/zff/$Filename" -m /mnt/wsl/zff/ | Out-Null
@@ -52,8 +52,3 @@ WSL --unmount \\.\PHYSICALDRIVE$Disk
 "Select Disk $Disk", "Online Disk" | diskpart | Out-Null
 # uncomment next line to debug
 #$Host.UI.RawUI.ReadKey()
-
-
-
-
-
