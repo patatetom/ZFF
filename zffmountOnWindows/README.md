@@ -55,6 +55,7 @@ zffmount --help
 > [!NOTE]
 > with « direct » access to the `ZFF` container.<br :>
 > the drive must be released from Windows before it can be used « directly » under `WSL`.<br />
+> the `wsl --mount` command does [not currently support](https://learn.microsoft.com/en-us/windows/wsl/wsl2-mount-disk) USB flash drives and SD card readers.<br />
 > access through Windows (mounted drive letter in `/mnt/e/`) is not acceptable given the poor speed.
 
 ```powershell
