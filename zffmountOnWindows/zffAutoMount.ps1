@@ -15,7 +15,7 @@ $Filename = (Get-ChildItem $Args[0]).FullName
 # check extension
 $Extension = (Get-ChildItem $Args[0]).Extension
 if ($Extension.ToUpper() -ne ".Z01") {0/0}
-# check magic header
+# check magic header (zffm)
 $Magic = Get-Content "$Filename" -Encoding Byte -Head 4
 if ((Compare-Object $magic ([byte]122,102,102,109)).length) {0/0}
 # check admin rights
@@ -52,5 +52,6 @@ WSL --unmount \\.\PHYSICALDRIVE$Disk
 "Select Disk $Disk", "Online Disk" | diskpart | Out-Null
 # uncomment next line to debug
 #$Host.UI.RawUI.ReadKey()
+
 
 
