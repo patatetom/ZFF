@@ -123,8 +123,8 @@ certutil -hashFile \\WSL$\Debian\zff\object_1\zff_image.dd SHA1
 
 > [!NOTE]
 > only `NTFS` has been tested (`ntfs-3g`).<br />
-> manipulating a disk requires administrative privileges (`UAC`).
-> only removable disks are supported by Windows.
+> manipulating a disk requires administrative privileges (`UAC`).<br />
+> only removable disks are [supported](https://learn.microsoft.com/en-us/windows/wsl/wsl2-mount-disk) by Windows.
 
 if your `ZFF` container is located on a Windows partition (`NTFS`, `exFAT`, `FAT`, `UDF`), opening it directly from Explorer can be automated :
 
