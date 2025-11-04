@@ -224,7 +224,7 @@ try {
     # Note: Device name may vary. You may need to adjust this logic.
     $deviceName = "/dev/sde$($diskInfo.PartitionNumber)"
     Write-Verbose "Mounting $deviceName to $WSL_TEMP_PATH"
-    wsl.exe mount $deviceName $WSL_TEMP_PATH 2>&1 | Out-Null
+    wsl.exe sudo mount $deviceName $WSL_TEMP_PATH 2>&1 | Out-Null
     
     # Display information
     Write-Host "`n`n" -NoNewline
@@ -245,7 +245,7 @@ finally {
     
     # Unmount temporary directory
     try {
-        wsl.exe umount $WSL_TEMP_PATH 2>&1 | Out-Null
+        wsl.exe sudo umount $WSL_TEMP_PATH 2>&1 | Out-Null
     }
     catch {
         Write-Warning "Unable to unmount $WSL_TEMP_PATH"
